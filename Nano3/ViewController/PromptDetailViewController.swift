@@ -1,16 +1,16 @@
 //
-//  IdeaDetailViewController.swift
+//  PromptDetailViewController.swift
 //  Nano3
 //
-//  Created by Lucas Cavalherie on 25/09/23.
+//  Created by Lucas Cavalherie on 26/09/23.
 //
 
 import Foundation
 import UIKit
 
-class IdeaDetailViewController: UIViewController {
+class PromptDetailViewController: UIViewController {
     
-    var idea: Idea? // A ideia a ser exibida
+    var prompt: Prompt? // O prompt a ser exibido
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -27,20 +27,12 @@ class IdeaDetailViewController: UIViewController {
         return label
     }()
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .white
         
         // Verifique se há uma ideia para exibir
-        guard let idea = idea else {
+        guard let prompt = prompt else {
             // Lide com o caso em que a ideia é nula ou inválida
             // Você pode exibir uma mensagem de erro ou fazer o que for apropriado para o seu aplicativo.
             return
@@ -49,7 +41,6 @@ class IdeaDetailViewController: UIViewController {
         // Adicione subviews à vista
         view.addSubview(titleLabel)
         view.addSubview(noteLabel)
-        view.addSubview(imageView)
         
         // Configure as restrições
         NSLayoutConstraint.activate([
@@ -59,22 +50,14 @@ class IdeaDetailViewController: UIViewController {
             
             noteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 8),
             noteLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            noteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            
-            imageView.topAnchor.constraint(equalTo: noteLabel.bottomAnchor, constant: 16),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+            noteLabel.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16)
         ])
         
         // Preencha as informações da ideia na tela
-        titleLabel.text = idea.title
-        noteLabel.text = idea.note
-        if let firstImage = idea.images.first {
-            imageView.image = firstImage
-        }
+        titleLabel.text = prompt.title
+        noteLabel.text = prompt.note
         
         // Configurar a barra de navegação
-        navigationItem.title = "Detalhes da Ideia"
+        navigationItem.title = "Detalhes do prompt"
     }
 }

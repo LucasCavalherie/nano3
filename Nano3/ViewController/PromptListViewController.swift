@@ -1,16 +1,16 @@
 //
-//  IdeasListViewController.swift
+//  PromptListViewController.swift
 //  Nano3
 //
-//  Created by Lucas Cavalherie on 25/09/23.
+//  Created by Lucas Cavalherie on 26/09/23.
 //
 
 import Foundation
 import UIKit
 
-class IdeasListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, IdeasListDelegate {
+class PromptListViewController: UIViewController, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, PromptListDelegate {
 
-    var ideasViewModel = IdeasViewModel()
+    var promptViewModel = PromptViewModel()
     
     let collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -36,7 +36,7 @@ class IdeasListViewController: UIViewController, UICollectionViewDataSource, UIC
         // Configurar a coleção
         collectionView.dataSource = self
         collectionView.delegate = self
-        collectionView.register(IdeaCollectionViewCell.self, forCellWithReuseIdentifier: "IdeaCell")
+        collectionView.register(PromptCollectionViewCell.self, forCellWithReuseIdentifier: "IdeaCell")
         collectionView.collectionViewLayout = collectionViewFlowLayout
         
         // Adicionar a coleção à vista principal
@@ -54,49 +54,47 @@ class IdeasListViewController: UIViewController, UICollectionViewDataSource, UIC
         navigationItem.rightBarButtonItem = UIBarButtonItem(
             barButtonSystemItem: .add,
             target: self,
-            action: #selector(createNewIdea)
+            action: #selector(createNewPrompt)
         )
     }
     
     // MARK: - Collection View Data Source
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ideasViewModel.ideas.count
+        return promptViewModel.prompts.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IdeaCell", for: indexPath) as! IdeaCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "IdeaCell", for: indexPath) as! PromptCollectionViewCell
         
         // Configure a célula com as informações da ideia
-        let idea = ideasViewModel.ideas[indexPath.item]
-        cell.configure(with: idea)
+        let prompt = promptViewModel.prompts[indexPath.item]
+        cell.configure(with: prompt)
         
         return cell
     }
     
     // MARK: - Collection View Delegate
-    
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         // Quando uma ideia é selecionada, navegue para a tela de detalhes da ideia
-        let idea = ideasViewModel.ideas[indexPath.item]
-        let ideaDetailViewController = IdeaDetailViewController()
-        ideaDetailViewController.idea = idea
-        navigationController?.pushViewController(ideaDetailViewController, animated: true)
+        let prompt = promptViewModel.prompts[indexPath.item]
+        let promptDetailViewController = PromptDetailViewController()
+        promptDetailViewController.prompt = prompt
+        navigationController?.pushViewController(promptDetailViewController, animated: true)
     }
     
     // MARK: - IdeasListDelegate
-    func didCreateNewIdea(_ idea: Idea) {
+    func didCreateNewPrompt(_ prompt: Prompt) {
         // Adicione a nova ideia à sua data source (ideasViewModel) e recarregue a coleção
         collectionView.reloadData()
     }
     
     // MARK: - Actions
     
-    @objc func createNewIdea() {
-        // Quando o botão "Criar Nova Ideia" é pressionado, navegue para a tela de criação/edição de ideia
-        let createEditIdeaViewController = CreateEditIdeaViewController(ideasViewModel: ideasViewModel)
-        createEditIdeaViewController.ideasListDelegate = self
-        navigationController?.pushViewController(createEditIdeaViewController, animated: true)
+    @objc func createNewPrompt() {
+        // Quando o botão "Criar Novo Prompt" é pressionado, navegue para a tela de criação/edição de ideia
+        let createEditPromptViewController = CreateEditPromptViewController(promptViewModel: promptViewModel)
+        createEditPromptViewController.promptListDelegate = self
+        navigationController?.pushViewController(createEditPromptViewController, animated: true)
     }
 }
-

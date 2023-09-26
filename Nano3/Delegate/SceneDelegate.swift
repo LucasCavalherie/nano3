@@ -25,7 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         self.window = window
         
         // Configure o controlador de visualização principal (IdeasListViewController)
-        let ideasListViewController = IdeasListViewController()
+        let ideasListViewController = PromptListViewController()
         let navigationController = UINavigationController(rootViewController: ideasListViewController)
         
         // Defina o controlador de visualização principal como a raiz da UIWindow

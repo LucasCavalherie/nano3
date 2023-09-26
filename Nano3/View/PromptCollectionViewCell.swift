@@ -1,16 +1,15 @@
 //
-//  IdeaCollectionViewCell.swift
+//  PromptCollectionViewCell.swift
 //  Nano3
 //
-//  Created by Lucas Cavalherie on 25/09/23.
+//  Created by Lucas Cavalherie on 26/09/23.
 //
 
 import Foundation
 import UIKit
 
-class IdeaCollectionViewCell: UICollectionViewCell {
+class PromptCollectionViewCell: UICollectionViewCell {
     
-    // Properties para exibir informações da ideia
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -26,14 +25,6 @@ class IdeaCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
-        return imageView
-    }()
-    
     override init(frame: CGRect) {
         super.init(frame: frame)
         
@@ -42,7 +33,6 @@ class IdeaCollectionViewCell: UICollectionViewCell {
         // Adicione subviews à célula
         addSubview(titleLabel)
         addSubview(noteLabel)
-        addSubview(imageView)
         
         // Configure as restrições
         NSLayoutConstraint.activate([
@@ -52,12 +42,7 @@ class IdeaCollectionViewCell: UICollectionViewCell {
             
             noteLabel.topAnchor.constraint(equalTo: titleLabel.bottomAnchor, constant: 4),
             noteLabel.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 8),
-            noteLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8),
-            
-            imageView.topAnchor.constraint(equalTo: noteLabel.bottomAnchor, constant: 8),
-            imageView.leadingAnchor.constraint(equalTo: leadingAnchor),
-            imageView.trailingAnchor.constraint(equalTo: trailingAnchor),
-            imageView.bottomAnchor.constraint(equalTo: bottomAnchor)
+            noteLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -8)
         ])
     }
     
@@ -67,15 +52,10 @@ class IdeaCollectionViewCell: UICollectionViewCell {
     }
     
     
-    // Configure a célula com as informações da ideia
-    func configure(with idea: Idea) {
-        titleLabel.text = idea.title
-        noteLabel.text = idea.note
-        if let firstImage = idea.images.first {
-            imageView.image = firstImage
-        } else {
-            imageView.image = nil // Limpe a imagem se não houver imagens
-        }
+    // Configure a célula com as informações do prompt
+    func configure(with prompt: Prompt) {
+        titleLabel.text = prompt.title
+        noteLabel.text = prompt.note
     }
     
     required init?(coder: NSCoder) {

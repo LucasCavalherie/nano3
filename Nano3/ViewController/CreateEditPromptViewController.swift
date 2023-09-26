@@ -1,18 +1,18 @@
 //
-//  CreateEditIdeaViewController.swift
+//  CreateEditPromptViewController.swift
 //  Nano3
 //
-//  Created by Lucas Cavalherie on 25/09/23.
+//  Created by Lucas Cavalherie on 26/09/23.
 //
 
 import Foundation
 import UIKit
 
-class CreateEditIdeaViewController: UIViewController {
+class CreateEditPromptViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     
-    var idea: Idea? // A ideia a ser editada (pode ser nula para criar uma nova ideia)
-    var ideasViewModel: IdeasViewModel // A ViewModel que gerencia as ideias
-    var ideasListDelegate: IdeasListDelegate? // Delegate para atualizar a tela de listagem
+    var prompt: Prompt? // A ideia a ser editada (pode ser nula para criar uma nova ideia)
+    var promptViewModel: PromptViewModel // A ViewModel que gerencia as ideias
+    var promptListDelegate: PromptListDelegate? // Delegate para atualizar a tela de listagem
     
     private let titleTextField: UITextField = {
         let textField = UITextField()
@@ -31,19 +31,9 @@ class CreateEditIdeaViewController: UIViewController {
         return textView
     }()
     
-    private let imageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.contentMode = .scaleAspectFit
-        imageView.clipsToBounds = true
-        imageView.layer.borderWidth = 1
-        imageView.layer.borderColor = UIColor.lightGray.cgColor
-        return imageView
-    }()
-    
-    // Inicialização da CreateEditIdeaViewController com a IdeasViewModel
-    init(ideasViewModel: IdeasViewModel) {
-        self.ideasViewModel = ideasViewModel
+    // Inicialização da CreateEditPromptViewController com a PromptViewModel
+    init(promptViewModel: PromptViewModel) {
+        self.promptViewModel = promptViewModel
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -58,7 +48,6 @@ class CreateEditIdeaViewController: UIViewController {
         // Configure as subviews
         view.addSubview(titleTextField)
         view.addSubview(noteTextView)
-        view.addSubview(imageView)
         
         // Configure as restrições
         NSLayoutConstraint.activate([
@@ -69,28 +58,20 @@ class CreateEditIdeaViewController: UIViewController {
             noteTextView.topAnchor.constraint(equalTo: titleTextField.bottomAnchor, constant: 8),
             noteTextView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
             noteTextView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            noteTextView.heightAnchor.constraint(equalToConstant: 100),
-            
-            imageView.topAnchor.constraint(equalTo: noteTextView.bottomAnchor, constant: 16),
-            imageView.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 16),
-            imageView.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -16),
-            imageView.heightAnchor.constraint(equalToConstant: 200)
+            noteTextView.heightAnchor.constraint(equalToConstant: 100)
         ])
         
         // Preencha as informações da ideia, se estiver editando
-        if let idea = idea {
-            titleTextField.text = idea.title
-            noteTextView.text = idea.note
-            if let firstImage = idea.images.first {
-                imageView.image = firstImage
-            }
+        if let prompt = prompt {
+            titleTextField.text = prompt.title
+            noteTextView.text = prompt.note
         }
         
         // Configurar a barra de navegação
-        if idea == nil {
-            navigationItem.title = "Criar Nova Ideia"
+        if prompt == nil {
+            navigationItem.title = "Criar Novo Prompt"
         } else {
-            navigationItem.title = "Editar Ideia"
+            navigationItem.title = "Editar Prompt"
         }
         
         // Adicionar botões de salvar e cancelar à barra de navegação
@@ -109,23 +90,15 @@ class CreateEditIdeaViewController: UIViewController {
     // MARK: - Actions
     
     @objc func saveIdea() {
-        // Salvar a ideia ou atualizar a ideia existente com base nos dados do formulário
-        
-        // Exemplo: Crie uma nova ideia ou atualize a ideia existente
-        if idea == nil {
-            // Criar uma nova ideia
-            let newIdea = Idea(title: titleTextField.text ?? "", note: noteTextView.text, images: [])
-            ideasViewModel.addIdea(newIdea)
-            
-            ideasListDelegate?.didCreateNewIdea(newIdea)
+        if prompt == nil {
+            let newPrompt = Prompt(title: titleTextField.text ?? "", note: noteTextView.text, phraseList: [])
+            promptViewModel.addPrompt(newPrompt)
+            promptListDelegate?.didCreateNewPrompt(newPrompt)
         } else {
-            // Atualizar a ideia existente
-            idea?.title = titleTextField.text ?? ""
-            idea?.note = noteTextView.text
-            // Atualize a imagem se necessário
+            prompt?.title = titleTextField.text ?? ""
+            prompt?.note = noteTextView.text
         }
-        
-        // Retorne à tela anterior
+
         navigationController?.popViewController(animated: true)
     }
     
@@ -134,4 +107,3 @@ class CreateEditIdeaViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
 }
-

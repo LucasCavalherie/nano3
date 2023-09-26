@@ -7,31 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7334739D2AC34C6F007ADD1D /* Prompt.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7334739C2AC34C6E007ADD1D /* Prompt.swift */; };
+		7334739F2AC34CF0007ADD1D /* Phrase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7334739E2AC34CF0007ADD1D /* Phrase.swift */; };
+		733473A12AC34E61007ADD1D /* PromptCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733473A02AC34E61007ADD1D /* PromptCollectionViewCell.swift */; };
+		733473A32AC34ED9007ADD1D /* PromptViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733473A22AC34ED9007ADD1D /* PromptViewModel.swift */; };
+		733473A52AC34F70007ADD1D /* PromptListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733473A42AC34F70007ADD1D /* PromptListViewController.swift */; };
+		733473A72AC35067007ADD1D /* PromptListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733473A62AC35067007ADD1D /* PromptListDelegate.swift */; };
+		733473A92AC3509F007ADD1D /* PromptDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733473A82AC3509F007ADD1D /* PromptDetailViewController.swift */; };
+		733473AB2AC3510E007ADD1D /* CreateEditPromptViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 733473AA2AC3510E007ADD1D /* CreateEditPromptViewController.swift */; };
 		73F3D9CE2AC202B100BAA186 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9CD2AC202B100BAA186 /* AppDelegate.swift */; };
 		73F3D9D02AC202B100BAA186 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9CF2AC202B100BAA186 /* SceneDelegate.swift */; };
 		73F3D9D72AC202B300BAA186 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 73F3D9D62AC202B300BAA186 /* Assets.xcassets */; };
-		73F3D9E82AC2081300BAA186 /* Idea.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9E72AC2081300BAA186 /* Idea.swift */; };
-		73F3D9EA2AC2084300BAA186 /* IdeasViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9E92AC2084300BAA186 /* IdeasViewModel.swift */; };
-		73F3D9ED2AC2093200BAA186 /* IdeasListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9EC2AC2093200BAA186 /* IdeasListViewController.swift */; };
-		73F3D9EF2AC20A6C00BAA186 /* IdeaCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9EE2AC20A6C00BAA186 /* IdeaCollectionViewCell.swift */; };
-		73F3D9F12AC20AA700BAA186 /* IdeaDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9F02AC20AA700BAA186 /* IdeaDetailViewController.swift */; };
-		73F3D9F32AC20B1200BAA186 /* CreateEditIdeaViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9F22AC20B1200BAA186 /* CreateEditIdeaViewController.swift */; };
-		73F3D9F52AC2109E00BAA186 /* IdeasListDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73F3D9F42AC2109E00BAA186 /* IdeasListDelegate.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		7334739C2AC34C6E007ADD1D /* Prompt.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Prompt.swift; sourceTree = "<group>"; };
+		7334739E2AC34CF0007ADD1D /* Phrase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Phrase.swift; sourceTree = "<group>"; };
+		733473A02AC34E61007ADD1D /* PromptCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptCollectionViewCell.swift; sourceTree = "<group>"; };
+		733473A22AC34ED9007ADD1D /* PromptViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptViewModel.swift; sourceTree = "<group>"; };
+		733473A42AC34F70007ADD1D /* PromptListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptListViewController.swift; sourceTree = "<group>"; };
+		733473A62AC35067007ADD1D /* PromptListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptListDelegate.swift; sourceTree = "<group>"; };
+		733473A82AC3509F007ADD1D /* PromptDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromptDetailViewController.swift; sourceTree = "<group>"; };
+		733473AA2AC3510E007ADD1D /* CreateEditPromptViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditPromptViewController.swift; sourceTree = "<group>"; };
 		73F3D9CA2AC202B100BAA186 /* Nano3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Nano3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		73F3D9CD2AC202B100BAA186 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		73F3D9CF2AC202B100BAA186 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		73F3D9D62AC202B300BAA186 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		73F3D9DB2AC202B300BAA186 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		73F3D9E72AC2081300BAA186 /* Idea.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Idea.swift; sourceTree = "<group>"; };
-		73F3D9E92AC2084300BAA186 /* IdeasViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasViewModel.swift; sourceTree = "<group>"; };
-		73F3D9EC2AC2093200BAA186 /* IdeasListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasListViewController.swift; sourceTree = "<group>"; };
-		73F3D9EE2AC20A6C00BAA186 /* IdeaCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaCollectionViewCell.swift; sourceTree = "<group>"; };
-		73F3D9F02AC20AA700BAA186 /* IdeaDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDetailViewController.swift; sourceTree = "<group>"; };
-		73F3D9F22AC20B1200BAA186 /* CreateEditIdeaViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateEditIdeaViewController.swift; sourceTree = "<group>"; };
-		73F3D9F42AC2109E00BAA186 /* IdeasListDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeasListDelegate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,7 +82,8 @@
 		73F3D9E12AC2049300BAA186 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				73F3D9E72AC2081300BAA186 /* Idea.swift */,
+				7334739C2AC34C6E007ADD1D /* Prompt.swift */,
+				7334739E2AC34CF0007ADD1D /* Phrase.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -88,7 +91,7 @@
 		73F3D9E22AC204A000BAA186 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				73F3D9EE2AC20A6C00BAA186 /* IdeaCollectionViewCell.swift */,
+				733473A02AC34E61007ADD1D /* PromptCollectionViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -96,7 +99,7 @@
 		73F3D9E32AC204A900BAA186 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				73F3D9E92AC2084300BAA186 /* IdeasViewModel.swift */,
+				733473A22AC34ED9007ADD1D /* PromptViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -104,9 +107,9 @@
 		73F3D9E42AC204C100BAA186 /* ViewController */ = {
 			isa = PBXGroup;
 			children = (
-				73F3D9EC2AC2093200BAA186 /* IdeasListViewController.swift */,
-				73F3D9F02AC20AA700BAA186 /* IdeaDetailViewController.swift */,
-				73F3D9F22AC20B1200BAA186 /* CreateEditIdeaViewController.swift */,
+				733473A42AC34F70007ADD1D /* PromptListViewController.swift */,
+				733473A82AC3509F007ADD1D /* PromptDetailViewController.swift */,
+				733473AA2AC3510E007ADD1D /* CreateEditPromptViewController.swift */,
 			);
 			path = ViewController;
 			sourceTree = "<group>";
@@ -130,7 +133,7 @@
 			children = (
 				73F3D9CD2AC202B100BAA186 /* AppDelegate.swift */,
 				73F3D9CF2AC202B100BAA186 /* SceneDelegate.swift */,
-				73F3D9F42AC2109E00BAA186 /* IdeasListDelegate.swift */,
+				733473A62AC35067007ADD1D /* PromptListDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -204,15 +207,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				73F3D9E82AC2081300BAA186 /* Idea.swift in Sources */,
+				733473A32AC34ED9007ADD1D /* PromptViewModel.swift in Sources */,
 				73F3D9CE2AC202B100BAA186 /* AppDelegate.swift in Sources */,
-				73F3D9ED2AC2093200BAA186 /* IdeasListViewController.swift in Sources */,
-				73F3D9EA2AC2084300BAA186 /* IdeasViewModel.swift in Sources */,
+				7334739F2AC34CF0007ADD1D /* Phrase.swift in Sources */,
+				733473A72AC35067007ADD1D /* PromptListDelegate.swift in Sources */,
+				733473A52AC34F70007ADD1D /* PromptListViewController.swift in Sources */,
 				73F3D9D02AC202B100BAA186 /* SceneDelegate.swift in Sources */,
-				73F3D9F12AC20AA700BAA186 /* IdeaDetailViewController.swift in Sources */,
-				73F3D9F32AC20B1200BAA186 /* CreateEditIdeaViewController.swift in Sources */,
-				73F3D9F52AC2109E00BAA186 /* IdeasListDelegate.swift in Sources */,
-				73F3D9EF2AC20A6C00BAA186 /* IdeaCollectionViewCell.swift in Sources */,
+				733473A12AC34E61007ADD1D /* PromptCollectionViewCell.swift in Sources */,
+				733473A92AC3509F007ADD1D /* PromptDetailViewController.swift in Sources */,
+				733473AB2AC3510E007ADD1D /* CreateEditPromptViewController.swift in Sources */,
+				7334739D2AC34C6F007ADD1D /* Prompt.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
